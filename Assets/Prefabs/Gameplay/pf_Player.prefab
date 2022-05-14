@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1919227769027152574}
   - component: {fileID: 1919227769027152575}
   - component: {fileID: 1919227769027152572}
+  - component: {fileID: 683484916560406634}
   m_Layer: 0
   m_Name: pf_Player
   m_TagString: Untagged
@@ -142,3 +143,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c4b5f1327a52418e6f0389836d3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoveSpeed: 10
+--- !u!114 &683484916560406634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10626be4eb3b784bac74adacbfecd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsData:
+  - Event: {fileID: 11400000, guid: 6e636b8026b0cdf4abf80adf270b8196, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1919227769027152572}
+          m_TargetAssemblyTypeName: SI_MoveHorizontalFromInput, Assembly-CSharp
+          m_MethodName: OnMoveActionPerformed
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
