@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6620020463342054963}
   - component: {fileID: 4290331222321395034}
   - component: {fileID: 7590981547777720401}
+  - component: {fileID: 5279485230748285662}
   - component: {fileID: 8468451567049972590}
   m_Layer: 0
   m_Name: pf_EnemiesManager
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcb31af6b7ad16439da8485d6d448f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFromStart: 3
+  shootDelayFromStart: 3
   shootCooldown: 1
   bulletObjectsPool: {fileID: 11400000, guid: 8a683228fa65bbf4a9815fee07c4e25f, type: 2}
 --- !u!114 &7590981547777720401
@@ -91,6 +92,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMoveSpeed: 1
+--- !u!114 &5279485230748285662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611008949712972108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0622c5ac8ee697949ba4084094e8ed1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 1.1
 --- !u!114 &8468451567049972590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +126,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: SI_EnemiesManager, Assembly-CSharp
           m_MethodName: OnEnemyDeath
           m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5279485230748285662}
+          m_TargetAssemblyTypeName: SI_MoveAcceleration, Assembly-CSharp
+          m_MethodName: Accelerate
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

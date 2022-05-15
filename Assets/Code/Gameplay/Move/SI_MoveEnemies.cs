@@ -8,6 +8,7 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
 
     private float moveWaitTime = 0f;
     private bool isMoving = false;
+    private bool shouldMoveDown = false;
     private bool shouldChangeDirection = false;
 
     private Vector3 moveDirection = Vector3.left;
@@ -52,34 +53,47 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
                 isMoving = false;
                 moveWaitTime = delay;
 
-                if(shouldChangeDirection)
+                if (shouldChangeDirection)
                 {
                     shouldChangeDirection = false;
+
                     moveDirection.x *= -1f;
                 }
             }
         }
         else
         {
-            startPosition = myTransform.position;
-
-            if (enemiesManager.Enemies[0].transform.position.x + distance * moveDirection.x < SI_CameraManager.HorizontalBounds.x)
+            if (shouldMoveDown)
             {
-                endPosition = myTransform.position;
-                endPosition.x = SI_CameraManager.HorizontalBounds.x - enemiesManager.Enemies[0].transform.localPosition.x;
+                shouldMoveDown = false;
 
-                shouldChangeDirection = true;
-            }
-            else if (enemiesManager.Enemies[enemiesManager.Enemies.Count - 1].transform.position.x + distance * moveDirection.x > SI_CameraManager.HorizontalBounds.y)
-            {
-                endPosition = myTransform.position;
-                endPosition.x = SI_CameraManager.HorizontalBounds.y - enemiesManager.Enemies[enemiesManager.Enemies.Count - 1].transform.localPosition.x;
+                startPosition = myTransform.position;
+                endPosition = startPosition + distance * Vector3.down;
 
                 shouldChangeDirection = true;
             }
             else
             {
-                endPosition = myTransform.position + distance * moveDirection;
+                startPosition = myTransform.position;
+
+                if (enemiesManager.Enemies[0].transform.position.x + distance * moveDirection.x < SI_CameraManager.HorizontalBounds.x)
+                {
+                    endPosition = myTransform.position;
+                    endPosition.x = SI_CameraManager.HorizontalBounds.x - enemiesManager.Enemies[0].transform.localPosition.x;
+
+                    shouldMoveDown = true;
+                }
+                else if (enemiesManager.Enemies[enemiesManager.Enemies.Count - 1].transform.position.x + distance * moveDirection.x > SI_CameraManager.HorizontalBounds.y)
+                {
+                    endPosition = myTransform.position;
+                    endPosition.x = SI_CameraManager.HorizontalBounds.y - enemiesManager.Enemies[enemiesManager.Enemies.Count - 1].transform.localPosition.x;
+
+                    shouldMoveDown = true;
+                }
+                else
+                {
+                    endPosition = myTransform.position + distance * moveDirection;
+                }
             }
 
             isMoving = true;
