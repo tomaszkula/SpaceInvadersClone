@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SI_HealthUI : MonoBehaviour
+public class SI_HealthUIWithLiveImages : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] private SI_ObjectsPool liveObjectsPool = null;

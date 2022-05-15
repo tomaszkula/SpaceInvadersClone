@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8216248690965892475}
   - component: {fileID: 1815148963924323879}
   - component: {fileID: 8216248690965892473}
+  - component: {fileID: 6717302139928546993}
   m_Layer: 0
   m_Name: pf_BulletPlayer
   m_TagString: Untagged
@@ -96,6 +97,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 1, z: 0}
+--- !u!114 &6717302139928546993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216248690965892474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d1dfb5cb82def448aa48a3a2dd290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsPool: {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8216248692070778616
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,3 +283,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: d53bc90f1332c72418ec4b0cde4c47a7, type: 2}
   damage: 1
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6717302139928546993}
+        m_TargetAssemblyTypeName: SI_DieAndReleaseToObjectsPool, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

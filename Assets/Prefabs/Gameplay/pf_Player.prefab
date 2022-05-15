@@ -205,7 +205,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHealth: 3
-  onHealthUpdated: {fileID: 11400000, guid: 34b06eff21dc5d0499f7203b563f187e, type: 2}
+  onHealthUpdated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 34b06eff21dc5d0499f7203b563f187e, type: 2}
+        m_TargetAssemblyTypeName: SI_EventWith1Param`1[[System.Single, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2240659356622429186
 MonoBehaviour:
   m_ObjectHideFlags: 0

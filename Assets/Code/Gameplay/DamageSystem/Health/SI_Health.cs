@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SI_Health : MonoBehaviour, SI_IHealth
 {
@@ -19,7 +20,7 @@ public class SI_Health : MonoBehaviour, SI_IHealth
     }
 
     [Header("Events")]
-    [SerializeField] private SI_EventWith1ParamFloat onHealthUpdated = null;
+    [SerializeField] private UnityEvent<float> onHealthUpdated = null;
 
     private void Start()
     {

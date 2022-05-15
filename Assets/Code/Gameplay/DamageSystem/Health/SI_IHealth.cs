@@ -1,4 +1,4 @@
 public interface SI_IHealth
 {
-    float Health { get; }
+    float Health { get; set; }
 }

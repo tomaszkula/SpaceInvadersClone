@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFromStart: 3
   shootCooldown: 1
-  bulletObjectsPool: {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
+  bulletObjectsPool: {fileID: 11400000, guid: 8a683228fa65bbf4a9815fee07c4e25f, type: 2}
 --- !u!114 &7590981547777720401
 MonoBehaviour:
   m_ObjectHideFlags: 0
