@@ -4,9 +4,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "objectsPool_NewObjectsPool", menuName = "Space Invaders/Objects Pool")]
 public class SI_ObjectsPool : ScriptableObject
 {
+    [Header("Variables")]
     [SerializeField] private GameObject prefab = null;
+    [SerializeField] private int initCount = 0;
 
     private Queue<GameObject> instances = new Queue<GameObject>();
+
+    public void Init()
+    {
+        for (int i = 0; i < initCount; i++)
+        {
+            GameObject _instance = Instantiate(prefab);
+            Release(_instance);
+        }
+    }
 
     public GameObject Get()
     {

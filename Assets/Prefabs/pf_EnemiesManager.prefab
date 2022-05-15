@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7561591119507119678}
   - component: {fileID: 3156475094621439715}
   - component: {fileID: 4290331222321395034}
+  - component: {fileID: 7590981547777720401}
   m_Layer: 0
   m_Name: pf_EnemiesManager
   m_TagString: Untagged
@@ -61,3 +62,16 @@ MonoBehaviour:
   delayFromStart: 3
   shootCooldown: 1
   bulletObjectsPool: {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
+--- !u!114 &7590981547777720401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611008949712972108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a45c902bd4fdbd4eac42db06b6ef68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMoveSpeed: 1

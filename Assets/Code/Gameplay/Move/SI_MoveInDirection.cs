@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class SI_MoveHorizontalFromInput : MonoBehaviour, SI_IMove
+public class SI_MoveInDirection : MonoBehaviour, SI_IMove
 {
     [Header("Variables")]
-    [SerializeField] private float maxMoveSpeed = 1f;
-
-    private float moveInput = 0f;
+    [SerializeField] private Vector3 moveDirection = Vector3.up;
 
     [Header("Components")]
     private Transform myTransform = null;
@@ -17,14 +15,9 @@ public class SI_MoveHorizontalFromInput : MonoBehaviour, SI_IMove
         iMoveSpeed = GetComponent<SI_IMoveSpeed>();
     }
 
-    public void OnMoveActionPerformed(float _moveInput)
-    {
-        moveInput = _moveInput;
-    }
-
     public void Move()
     {
         float _moveSpeed = (iMoveSpeed?.MoveSpeed ?? 1f) * Time.deltaTime;
-        myTransform.position += _moveSpeed * moveInput * Vector3.right;
+        myTransform.position += _moveSpeed * myTransform.TransformDirection(moveDirection);
     }
 }
