@@ -146,10 +146,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d1dfb5cb82def448aa48a3a2dd290b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsPool: {fileID: 0}
+  objectsPool: {fileID: 11400000, guid: d2255fc0b304dc844b70b6368e1064a7, type: 2}
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bc8539e72987ad14d9c48d12f88a56cf, type: 2}
+        m_TargetAssemblyTypeName: SI_EventWith1Param`1[[UnityEngine.GameObject, UnityEngine
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1264496163048380136
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1919227768897839847}
   - component: {fileID: 1919227768897839846}
   m_Layer: 0
-  m_Name: sprite_Player
+  m_Name: renderer_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 6969691564940102936}
   - component: {fileID: 6745233010730642253}
   - component: {fileID: 6491581522967391784}
+  - component: {fileID: 2132192076198925762}
   - component: {fileID: 2240659356622429186}
   - component: {fileID: 683484916560406634}
   m_Layer: 0
@@ -264,6 +265,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthToDie: 0
+--- !u!114 &2132192076198925762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5be03dd3fd797141a0fb4b8c989eeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererForBounds: {fileID: 1919227768897839846}
 --- !u!114 &2240659356622429186
 MonoBehaviour:
   m_ObjectHideFlags: 0
