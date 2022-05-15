@@ -9,20 +9,25 @@ public class SI_EnemiesManager : MonoBehaviour
     public List<SI_Enemy> Enemies { get; private set; } = new List<SI_Enemy>();
 
     [Header("Components")]
+    private Transform myTransform = null;
+    private SI_IMove iMove = null;
     private SI_IShoot iShoot = null;
 
     private void Awake()
     {
+        myTransform = transform;
+        iMove = GetComponent<SI_IMove>();
         iShoot = GetComponent<SI_IShoot>();
     }
 
     private void Start()
     {
-        SpawnEnemiesWave();
+        spawnEnemies();
     }
 
     private void Update()
     {
+        iMove?.Move();
         iShoot?.Shoot();
     }
 
@@ -38,14 +43,15 @@ public class SI_EnemiesManager : MonoBehaviour
         Enemies.Remove(_enemy);
     }
 
-    public void SpawnEnemiesWave()
+    public void spawnEnemies()
     {
-        float _xOffset = (enemiesWave.EnemiesCount - 1) * enemiesWave.PositionOffset.x / 2f;
+        Vector3 _positionOffset = (enemiesWave.EnemiesCount - 1) * enemiesWave.PositionOffset / 2f;
 
         for (int i = 0; i < enemiesWave.EnemiesCount; i++)
         {
             SI_Enemy _enemy = enemiesWave.EnemyObjectsPool.Get().GetComponent<SI_Enemy>();
-            _enemy.transform.position += i * enemiesWave.PositionOffset - new Vector3(_xOffset, 0f, 0f);
+            _enemy.transform.SetParent(myTransform);
+            _enemy.transform.position += myTransform.position + i * enemiesWave.PositionOffset - _positionOffset;
             Enemies.Add(_enemy);
         }
     }

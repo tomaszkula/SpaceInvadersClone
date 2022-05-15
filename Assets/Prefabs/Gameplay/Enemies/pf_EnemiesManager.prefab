@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7561591119507119678}
   - component: {fileID: 3156475094621439715}
+  - component: {fileID: 6620020463342054963}
   - component: {fileID: 4290331222321395034}
   - component: {fileID: 7590981547777720401}
   - component: {fileID: 8468451567049972590}
@@ -48,6 +49,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesWave: {fileID: 11400000, guid: 1aa9b5fe305392a4c9ed2dc764157a6c, type: 2}
+--- !u!114 &6620020463342054963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611008949712972108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685906324eb072148badc6f0f7954806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  delay: 0.5
 --- !u!114 &4290331222321395034
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,9 +46,6 @@ public class SI_HealthUIWithLiveImages : MonoBehaviour
         int _healthToInt = (int)_health;
         int _healthDifference = _healthToInt - currentHealth;
 
-        currentHealth = Mathf.Clamp(currentHealth, 0, lives.Count);
-        realCurrentHealth = _healthToInt;
-
         if(_healthDifference > 0)
         {
             for (int i = currentHealth; i < _healthToInt && i < lives.Count; i++)
@@ -63,9 +60,9 @@ public class SI_HealthUIWithLiveImages : MonoBehaviour
         }
         else if(_healthDifference < 0)
         {
-            for (int i = currentHealth; i > _healthToInt && i > 0; i--)
+            for (int i = currentHealth; i >= _healthToInt && i >= 0; i--)
             {
-                if(i > lives.Count)
+                if(i > lives.Count - 1)
                 {
                     continue;
                 }
@@ -73,5 +70,8 @@ public class SI_HealthUIWithLiveImages : MonoBehaviour
                 lives[i].Setup(false);
             }
         }
+
+        currentHealth = Mathf.Clamp(_healthToInt, 0, lives.Count);
+        realCurrentHealth = _healthToInt;
     }
 }

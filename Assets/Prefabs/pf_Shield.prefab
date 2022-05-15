@@ -266,6 +266,8 @@ GameObject:
   - component: {fileID: 4680211215834133740}
   - component: {fileID: 4680211215834133743}
   - component: {fileID: 4680211215834133742}
+  - component: {fileID: 167356368408559664}
+  - component: {fileID: 5594189920876137392}
   m_Layer: 0
   m_Name: pf_Shield
   m_TagString: Untagged
@@ -315,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f2b3a8f0a7ce448ac0c25f8e846a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHealth: 20
+  defaultHealth: 3
   onHealthUpdated:
     m_PersistentCalls:
       m_Calls:
@@ -331,6 +333,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5594189920876137392}
+        m_TargetAssemblyTypeName: SI_DieAtHealth, Assembly-CSharp
+        m_MethodName: OnHealthUpdated
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &167356368408559664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680211215834133737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d1dfb5cb82def448aa48a3a2dd290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsPool: {fileID: 11400000, guid: ad16f7237a0968640a1aad1c71daab05, type: 2}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5594189920876137392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680211215834133737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf548151314667439ab431564e17d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthToDie: 0
 --- !u!1 &4680211216404353939
 GameObject:
   m_ObjectHideFlags: 0

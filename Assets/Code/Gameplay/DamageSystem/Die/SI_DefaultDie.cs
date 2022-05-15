@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SI_DefaultDie : MonoBehaviour, SI_IDie
 {
     [Header("Events")]
-    [SerializeField] private SI_EventWith1Param<GameObject> onDeath = null;
+    [SerializeField] private UnityEvent<GameObject> onDeath = null;
 
     public void Die()
     {

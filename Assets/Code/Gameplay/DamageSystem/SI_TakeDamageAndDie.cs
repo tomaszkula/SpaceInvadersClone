@@ -6,11 +6,12 @@ public class SI_TakeDamageAndDie : MonoBehaviour, SI_ITakeDamage
     [Header("Variables")]
     [SerializeField] private List<SI_DamageType> availableDamageTypes = new List<SI_DamageType>();
 
+    [Header("Components")]
     private SI_IDie iDie = null;
 
     private void Awake()
     {
-        iDie = GetComponent<SI_IDie>();
+        iDie = GetComponentInParent<SI_IDie>();
     }
 
     public bool TakeDamage(SI_DamageType _damageType, float _damage, GameObject _inflictor, GameObject _attacker, Vector3 _hitPosition)
