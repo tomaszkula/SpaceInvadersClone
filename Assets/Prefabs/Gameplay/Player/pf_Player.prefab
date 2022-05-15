@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c4b5f1327a52418e6f0389836d3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 10
 --- !u!114 &7952786656069957664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +250,19 @@ MonoBehaviour:
   objectsPool: {fileID: 11400000, guid: b7bb3b8ffa1daec479d4a6f11833a2fc, type: 2}
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be49eade0cd36fc43bbfd904dc04d1ad, type: 2}
+        m_TargetAssemblyTypeName: SI_EventWith1Param`1[[UnityEngine.GameObject, UnityEngine
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6491581522967391784
 MonoBehaviour:
   m_ObjectHideFlags: 0
