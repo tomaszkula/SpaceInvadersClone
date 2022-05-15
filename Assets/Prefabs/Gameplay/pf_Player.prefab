@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 1919227769027152575}
   - component: {fileID: 1919227769027152572}
   - component: {fileID: 7952786656069957664}
+  - component: {fileID: 4393953234904621482}
+  - component: {fileID: 6969691564940102936}
   - component: {fileID: 2240659356622429186}
   - component: {fileID: 683484916560406634}
   m_Layer: 0
@@ -162,6 +164,33 @@ MonoBehaviour:
   bulletObjectsPool: {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
   shootCooldown: 0.5
   bulletsSpawner: {fileID: 6914904459441598156}
+--- !u!114 &4393953234904621482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a5463a7e38c4b4cba6164196921190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaxHealth: 3
+  onMaxHealthUpdated: {fileID: 11400000, guid: 16158c3414a3d66429558405f7de9d66, type: 2}
+--- !u!114 &6969691564940102936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f2b3a8f0a7ce448ac0c25f8e846a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHealthUpdated: {fileID: 11400000, guid: 34b06eff21dc5d0499f7203b563f187e, type: 2}
 --- !u!114 &2240659356622429186
 MonoBehaviour:
   m_ObjectHideFlags: 0
