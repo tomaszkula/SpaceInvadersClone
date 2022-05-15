@@ -39,7 +39,7 @@ public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
 
     public void Shoot()
     {
-        if(shootTime > 0f)
+        if(shootTime > 0f || enemiesManager.Enemies.Count < 1)
         {
             return;
         }

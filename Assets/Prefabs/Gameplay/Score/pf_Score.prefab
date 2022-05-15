@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4460973846274132361}
   - component: {fileID: 4460973846274132362}
+  - component: {fileID: 3860366518794837492}
+  - component: {fileID: 6755215413252543566}
   m_Layer: 0
   m_Name: pf_Score
   m_TagString: Untagged
@@ -45,3 +47,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onScoreUpdated: {fileID: 11400000, guid: b1ab12626cbd6b84a87d9c32471b5f45, type: 2}
+--- !u!114 &3860366518794837492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460973846274132363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c592295bc694d04997cfab2036cfafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6755215413252543566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460973846274132363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3506d9bf768097b4a85c8d77af3c756f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsData:
+  - Event: {fileID: 11400000, guid: 3a9e5c53fecd71346b75796fa810ffe1, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3860366518794837492}
+          m_TargetAssemblyTypeName: SI_ScoreCallbacks, Assembly-CSharp
+          m_MethodName: OnDeath
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

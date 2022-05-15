@@ -225,7 +225,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7952786656069957664}
           m_TargetAssemblyTypeName: SI_ShootFromInput, Assembly-CSharp
-          m_MethodName: OnShootActionPerformed
+          m_MethodName: OnShootActionStarted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Event: {fileID: 11400000, guid: 56dbad8115fe4d7428652ed85c13e9a9, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7952786656069957664}
+          m_TargetAssemblyTypeName: SI_ShootFromInput, Assembly-CSharp
+          m_MethodName: OnShootActionCanceled
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

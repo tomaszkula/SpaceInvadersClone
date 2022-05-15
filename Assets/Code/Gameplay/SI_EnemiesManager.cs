@@ -26,6 +26,18 @@ public class SI_EnemiesManager : MonoBehaviour
         iShoot?.Shoot();
     }
 
+    public void OnEnemyDeath(GameObject _enemyInstance)
+    {
+        SI_Enemy _enemy = _enemyInstance?.GetComponent<SI_Enemy>();
+
+        if(_enemy == null)
+        {
+            return;
+        }
+
+        Enemies.Remove(_enemy);
+    }
+
     public void SpawnEnemiesWave()
     {
         float _xOffset = (enemiesWave.EnemiesCount - 1) * enemiesWave.PositionOffset.x / 2f;

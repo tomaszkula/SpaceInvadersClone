@@ -8,7 +8,7 @@ public class SI_ShootFromInput : MonoBehaviour, SI_IShoot
     [SerializeField] private SI_ObjectsPool bulletObjectsPool = null;
     [SerializeField] private float shootCooldown = 0.5f;
 
-    private bool canShoot = false;
+    private bool isShooting = false;
     private float shootTime = 0f;
 
     [Header("References")]
@@ -22,19 +22,19 @@ public class SI_ShootFromInput : MonoBehaviour, SI_IShoot
         }
     }
 
-    private void LateUpdate()
+    public void OnShootActionStarted()
     {
-        canShoot = false;
+        isShooting = true;
     }
 
-    public void OnShootActionPerformed()
+    public void OnShootActionCanceled()
     {
-        canShoot = true;
+        isShooting = false;
     }
 
     public void Shoot()
     {
-        if(canShoot && shootTime <= 0f)
+        if(isShooting && shootTime <= 0f)
         {
             shootTime = shootCooldown;
 

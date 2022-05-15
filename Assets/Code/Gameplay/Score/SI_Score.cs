@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class SI_Score : MonoBehaviour
+public class SI_Score : MonoBehaviour, SI_IScore
 {
-    [SerializeField] SI_EventWith1Param<int> onScoreUpdated = null;
-
+    [Header("Variables")]
     private int score = 0;
 
     public int Score
@@ -11,7 +10,7 @@ public class SI_Score : MonoBehaviour
         get => score;
         set
         {
-            if(value == score)
+            if (value == score)
             {
                 return;
             }
@@ -22,13 +21,11 @@ public class SI_Score : MonoBehaviour
         }
     }
 
+    [Header("Events")]
+    [SerializeField] private SI_EventWith1Param<int> onScoreUpdated = null;
+
     private void Start()
     {
         Score = 0;
-    }
-
-    public void AddScore(int _score)
-    {
-        Score += _score;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SI_Damager : MonoBehaviour
+public class SI_DefaultDamage : MonoBehaviour, SI_IDamage
 {
     [Header("Variables")]
     [SerializeField] private SI_DamageType damageType = null;
@@ -19,6 +19,12 @@ public class SI_Damager : MonoBehaviour
     public void Damage(GameObject _target, Vector3 _hitPosition)
     {
         SI_ITakeDamage _iTakeDamage = _target?.GetComponent<SI_ITakeDamage>();
-        _iTakeDamage?.TakeDamage(damageType, damage, iInflictor?.Inflictor ?? gameObject, iAttacker?.Attacker ?? gameObject, _hitPosition);
+
+        if(_iTakeDamage == null)
+        {
+            return;
+        }
+
+        _iTakeDamage.TakeDamage(damageType, damage, iInflictor?.Inflictor ?? gameObject, iAttacker?.Attacker ?? gameObject, _hitPosition);
     }
 }

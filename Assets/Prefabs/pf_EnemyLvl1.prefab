@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 382066006850576686}
   - component: {fileID: 1740387840551321309}
   - component: {fileID: 294585907528362184}
+  - component: {fileID: 3324466204273486744}
   m_Layer: 0
   m_Name: pf_EnemyLvl1
   m_TagString: Untagged
@@ -102,6 +103,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsPool: {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
   onDeath: {fileID: 11400000, guid: 3a9e5c53fecd71346b75796fa810ffe1, type: 2}
+--- !u!114 &3324466204273486744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907370559602989564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561f3be3a8fba9541882914674f310db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultScorePerDeath: 10
 --- !u!1 &8056646361842404255
 GameObject:
   m_ObjectHideFlags: 0

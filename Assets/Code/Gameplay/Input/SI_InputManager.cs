@@ -5,7 +5,8 @@ public class SI_InputManager : MonoBehaviour
 {
     [Header("Events")]
     [SerializeField] private SI_EventWith1Param<float> onMove = null;
-    [SerializeField] private SI_Event onShoot = null;
+    [SerializeField] private SI_Event onShootStarted = null;
+    [SerializeField] private SI_Event onShootCanceled = null;
 
     private SI_InputData inputData = null;
 
@@ -18,13 +19,14 @@ public class SI_InputManager : MonoBehaviour
     private void OnEnable()
     {
         inputData.Default.Move.performed += onMoveActionPerformed;
-        inputData.Default.Shoot.performed += onShootActionPerformed;
+        inputData.Default.Shoot.started += onShootActionStarted;
+        inputData.Default.Shoot.canceled += onShootActionCanceled;
     }
 
     private void OnDisable()
     {
         inputData.Default.Move.performed -= onMoveActionPerformed;
-        inputData.Default.Shoot.performed -= onShootActionPerformed;
+        inputData.Default.Shoot.canceled -= onShootActionCanceled;
     }
 
     private void onMoveActionPerformed(InputAction.CallbackContext _context)
@@ -33,8 +35,13 @@ public class SI_InputManager : MonoBehaviour
         onMove?.Invoke(_floatValue);
     }
 
-    private void onShootActionPerformed(InputAction.CallbackContext _context)
+    private void onShootActionStarted(InputAction.CallbackContext _context)
     {
-        onShoot?.Invoke();
+        onShootStarted?.Invoke();
+    }
+
+    private void onShootActionCanceled(InputAction.CallbackContext _context)
+    {
+        onShootCanceled?.Invoke();
     }
 }

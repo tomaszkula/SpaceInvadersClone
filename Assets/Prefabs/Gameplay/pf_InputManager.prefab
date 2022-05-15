@@ -121,4 +121,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onMove: {fileID: 11400000, guid: 6e636b8026b0cdf4abf80adf270b8196, type: 2}
-  onShoot: {fileID: 11400000, guid: ce2d4582bec629c4b9b7a48e89106ee4, type: 2}
+  onShootStarted: {fileID: 11400000, guid: ce2d4582bec629c4b9b7a48e89106ee4, type: 2}
+  onShootCanceled: {fileID: 11400000, guid: 56dbad8115fe4d7428652ed85c13e9a9, type: 2}
