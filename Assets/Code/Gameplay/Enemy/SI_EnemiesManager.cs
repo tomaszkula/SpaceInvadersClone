@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SI_EnemiesManager : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class SI_EnemiesManager : MonoBehaviour
     [SerializeField] private SI_EnemiesWave enemiesWave = null;
 
     public List<SI_Enemy> Enemies { get; private set; } = new List<SI_Enemy>();
+
+    [Header("Variables")]
+    [SerializeField] private UnityEvent onEnemyWaveDestroyed = null;
+
+    private Vector3 defaultPosition = Vector3.zero;
 
     [Header("Components")]
     private Transform myTransform = null;
@@ -18,11 +24,13 @@ public class SI_EnemiesManager : MonoBehaviour
         myTransform = transform;
         iMove = GetComponent<SI_IMove>();
         iShoot = GetComponent<SI_IShoot>();
+
+        defaultPosition = myTransform.position;
     }
 
     private void Start()
     {
-        spawnEnemies();
+        SpawnEnemies();
     }
 
     private void Update()
@@ -41,9 +49,15 @@ public class SI_EnemiesManager : MonoBehaviour
         }
 
         Enemies.Remove(_enemy);
+
+        if(Enemies.Count <= 0)
+        {
+            SetDefaultPosition();
+            onEnemyWaveDestroyed?.Invoke();
+        }
     }
 
-    public void spawnEnemies()
+    public void SpawnEnemies()
     {
         for (int i = 0; i < enemiesWave.Waves.Length; i++)
         {
@@ -59,5 +73,10 @@ public class SI_EnemiesManager : MonoBehaviour
                 Enemies.Add(_enemy);
             }
         }
+    }
+
+    public void SetDefaultPosition()
+    {
+        myTransform.position = defaultPosition;
     }
 }

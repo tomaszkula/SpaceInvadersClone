@@ -9,6 +9,11 @@ public class SI_DefaultMoveSpeed : MonoBehaviour, SI_IMoveSpeed
 
     private void Start()
     {
+        SetDefaultMoveSpeed();
+    }
+
+    public void SetDefaultMoveSpeed()
+    {
         MoveSpeed = defaultMoveSpeed;
     }
 }

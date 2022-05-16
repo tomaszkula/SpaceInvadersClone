@@ -9,6 +9,11 @@ public class SI_DefaultShootDelay : MonoBehaviour, SI_IShootDelay
 
     private void Start()
     {
+        SetDefaultShootDelay();
+    }
+
+    public void SetDefaultShootDelay()
+    {
         ShootDelay = defaultShootDelay;
     }
 }

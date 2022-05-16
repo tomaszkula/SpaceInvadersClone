@@ -53,6 +53,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesWave: {fileID: 11400000, guid: 1aa9b5fe305392a4c9ed2dc764157a6c, type: 2}
+  onEnemyWaveDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3156475094621439715}
+        m_TargetAssemblyTypeName: SI_EnemiesManager, Assembly-CSharp
+        m_MethodName: SpawnEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7590981547777720401}
+        m_TargetAssemblyTypeName: SI_DefaultMoveSpeed, Assembly-CSharp
+        m_MethodName: SetDefaultMoveSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8984385655104872177}
+        m_TargetAssemblyTypeName: SI_DefaultShootDelay, Assembly-CSharp
+        m_MethodName: SetDefaultShootDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6620020463342054963
 MonoBehaviour:
   m_ObjectHideFlags: 0
