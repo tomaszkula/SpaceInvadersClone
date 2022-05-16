@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: objectsPool_EnemyLvl1
   m_EditorClassIdentifier: 
   prefab: {fileID: 4907370559602989564, guid: 458d8d5c998e6b547911d8a0b321d1b7, type: 3}
+  initCount: 11

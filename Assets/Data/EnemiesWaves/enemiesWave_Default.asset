@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b41601e6bd439409b26ecc25696153, type: 3}
   m_Name: enemiesWave_Default
   m_EditorClassIdentifier: 
-  EnemyObjectsPool: {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
-  EnemiesCount: 11
-  PositionOffset: {x: 1, y: 0, z: 0}
+  Waves:
+  - EnemyObjectsPool: {fileID: 11400000, guid: 7cdd8d02595ca0a4c8f3ca2ee90ff6cc, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  - EnemyObjectsPool: {fileID: 11400000, guid: 7cdd8d02595ca0a4c8f3ca2ee90ff6cc, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  - EnemyObjectsPool: {fileID: 11400000, guid: 227781ce79c471c4ea29b5ad0903c539, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  - EnemyObjectsPool: {fileID: 11400000, guid: 227781ce79c471c4ea29b5ad0903c539, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  - EnemyObjectsPool: {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  - EnemyObjectsPool: {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
+    EnemiesCount: 11
+    PositionOffset: {x: 0.75, y: 0, z: 0}
+  PositionOffset: {x: 0, y: -0.75, z: 0}

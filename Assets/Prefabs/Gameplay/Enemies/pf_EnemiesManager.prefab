@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4290331222321395034}
   - component: {fileID: 7590981547777720401}
   - component: {fileID: 5279485230748285662}
+  - component: {fileID: 1710501559191427031}
   - component: {fileID: 8468451567049972590}
   m_Layer: 0
   m_Name: pf_EnemiesManager
@@ -104,7 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0622c5ac8ee697949ba4084094e8ed1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 1.1
+  acceleration: 1.02
+--- !u!114 &1710501559191427031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611008949712972108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d37a3e4000958c449f7c8a2e6c8b03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8468451567049972590
 MonoBehaviour:
   m_ObjectHideFlags: 0

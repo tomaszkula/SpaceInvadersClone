@@ -45,14 +45,19 @@ public class SI_EnemiesManager : MonoBehaviour
 
     public void spawnEnemies()
     {
-        Vector3 _positionOffset = (enemiesWave.EnemiesCount - 1) * enemiesWave.PositionOffset / 2f;
-
-        for (int i = 0; i < enemiesWave.EnemiesCount; i++)
+        for (int i = 0; i < enemiesWave.Waves.Length; i++)
         {
-            SI_Enemy _enemy = enemiesWave.EnemyObjectsPool.Get().GetComponent<SI_Enemy>();
-            _enemy.transform.SetParent(myTransform);
-            _enemy.transform.position += myTransform.position + i * enemiesWave.PositionOffset - _positionOffset;
-            Enemies.Add(_enemy);
+            SI_EnemiesWave.Wave _wave = enemiesWave.Waves[i];
+
+            Vector3 _positionOffset = (_wave.EnemiesCount - 1) * _wave.PositionOffset / 2f;
+
+            for (int j = 0; j < _wave.EnemiesCount; j++)
+            {
+                SI_Enemy _enemy = _wave.EnemyObjectsPool.Get().GetComponent<SI_Enemy>();
+                _enemy.transform.SetParent(myTransform);
+                _enemy.transform.position += myTransform.position + i * enemiesWave.PositionOffset + j * _wave.PositionOffset - _positionOffset;
+                Enemies.Add(_enemy);
+            }
         }
     }
 }
