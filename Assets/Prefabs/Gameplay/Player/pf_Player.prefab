@@ -103,8 +103,10 @@ GameObject:
   - component: {fileID: 6491581522967391784}
   - component: {fileID: 2132192076198925762}
   - component: {fileID: 6098769306146641726}
+  - component: {fileID: 597708516548026159}
   - component: {fileID: 2240659356622429186}
   - component: {fileID: 683484916560406634}
+  - component: {fileID: 8690056680565114281}
   m_Layer: 0
   m_Name: pf_Player
   m_TagString: Untagged
@@ -302,6 +304,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultShootDelay: 0.5
+--- !u!114 &597708516548026159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ed71cb8f4fb944dba6ebdbbcdbe9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2240659356622429186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +381,35 @@ MonoBehaviour:
         - m_Target: {fileID: 1919227769027152572}
           m_TargetAssemblyTypeName: SI_MoveHorizontalFromInput, Assembly-CSharp
           m_MethodName: OnMoveActionPerformed
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8690056680565114281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc6937c7b492cd4599994cd1f0552c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsData:
+  - Event: {fileID: 11400000, guid: f8ab9759f9d39094e8bf240e5727c51b, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 597708516548026159}
+          m_TargetAssemblyTypeName: SI_PlayerLevel, Assembly-CSharp
+          m_MethodName: OnEnemiesMovedDown
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

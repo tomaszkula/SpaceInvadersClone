@@ -8,7 +8,7 @@ public class SI_ShieldsManager : MonoBehaviour
     [SerializeField] private int shieldsCount = 4;
     [SerializeField] private Vector3 shieldPositionOffset = Vector3.zero;
 
-    private List<SI_Shield> shields = new List<SI_Shield>();
+    public List<SI_Shield> Shields { get; private set; } = new List<SI_Shield>();
 
     [Header("Components")]
     private Transform myTransform = null;
@@ -20,6 +20,18 @@ public class SI_ShieldsManager : MonoBehaviour
         spawnShields();
     }
 
+    public void OnShieldDestroyed(GameObject _shieldInstance)
+    {
+        SI_Shield _shield = _shieldInstance?.GetComponent<SI_Shield>();
+
+        if(_shield == null)
+        {
+            return;
+        }
+
+        Shields.Remove(_shield);
+    }
+
     private void spawnShields()
     {
         Vector3 _positionOffset = (shieldsCount - 1) * shieldPositionOffset * 0.5f;
@@ -28,7 +40,7 @@ public class SI_ShieldsManager : MonoBehaviour
         {
             SI_Shield _shield = shieldObjectsPool.Get().GetComponent<SI_Shield>();
             _shield.transform.position += myTransform.position + i * shieldPositionOffset - _positionOffset;
-            shields.Add(_shield);
+            Shields.Add(_shield);
         }
     }
 }

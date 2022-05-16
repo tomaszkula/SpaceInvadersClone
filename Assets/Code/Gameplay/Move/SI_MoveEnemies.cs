@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SI_MoveEnemies : MonoBehaviour, SI_IMove
 {
@@ -6,13 +7,17 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
     [SerializeField] private float distance = 1f;
     [SerializeField] private float delay = 0.5f;
 
-    private float moveWaitTime = 0f;
     private bool isMoving = false;
     private bool shouldMoveDown = false;
     private bool shouldChangeDirection = false;
-
+    private float moveWaitTime = 0f;
     private Vector3 moveDirection = Vector3.left;
     private Vector3 endPosition = Vector3.zero;
+
+    private Vector3 defaultPosition = Vector3.zero;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent<Vector3> onEnemiesMovedDown = null;
 
     [Header("Components")]
     private Transform myTransform = null;
@@ -26,6 +31,13 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
         enemiesManager = GetComponent<SI_EnemiesManager>();
         iMoveSpeed = GetComponent<SI_IMoveSpeed>();
         iBounds = GetComponent<SI_IBounds>();
+
+        defaultPosition = myTransform.position;
+    }
+
+    private void Start()
+    {
+        Init();
     }
 
     private void Update()
@@ -34,6 +46,16 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
         {
             moveWaitTime -= Time.deltaTime;
         }
+    }
+
+    public void Init()
+    {
+        isMoving = false;
+        shouldMoveDown = false;
+        shouldChangeDirection = false;
+        moveWaitTime = 0f;
+        moveDirection = Vector3.left;
+        endPosition = defaultPosition;
     }
 
     public void Move()
@@ -58,6 +80,8 @@ public class SI_MoveEnemies : MonoBehaviour, SI_IMove
                     shouldChangeDirection = false;
 
                     moveDirection.x *= -1f;
+
+                    onEnemiesMovedDown?.Invoke(iBounds.Bounds.min);
                 }
             }
         }

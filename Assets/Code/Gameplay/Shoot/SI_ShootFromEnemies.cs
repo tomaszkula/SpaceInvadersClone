@@ -23,10 +23,9 @@ public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
         waiterFromStart = new WaitForSeconds(shootDelayFromStart);
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return waiterFromStart;
-        canShoot = true;
+        Init();
     }
 
     private void Update()
@@ -35,6 +34,14 @@ public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
         {
             shootCooldown -= Time.deltaTime;
         }
+    }
+
+    public void Init()
+    {
+        canShoot = false;
+        shootCooldown = 0f;
+
+        StartCoroutine(init());
     }
 
     public void Shoot()
@@ -50,5 +57,11 @@ public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
         GameObject _bulletInstance = bulletObjectsPool.Get();
         _bulletInstance.transform.position = enemiesManager.Enemies[_targetId].transform.position;
         _bulletInstance.transform.rotation = enemiesManager.Enemies[_targetId].transform.rotation * Quaternion.Euler(0f, 0f, 180f);
+    }
+
+    private IEnumerator init()
+    {
+        yield return waiterFromStart;
+        canShoot = true;
     }
 }

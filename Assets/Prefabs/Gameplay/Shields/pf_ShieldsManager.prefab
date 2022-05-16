@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1945414602610151709}
   - component: {fileID: 1945414602610151710}
+  - component: {fileID: 8875805206260577917}
+  - component: {fileID: 5789612302736586997}
+  - component: {fileID: 421600143624549885}
+  - component: {fileID: 8290316350257651844}
   m_Layer: 0
   m_Name: pf_ShieldsManager
   m_TagString: Untagged
@@ -47,3 +51,85 @@ MonoBehaviour:
   shieldObjectsPool: {fileID: 11400000, guid: ad16f7237a0968640a1aad1c71daab05, type: 2}
   shieldsCount: 4
   shieldPositionOffset: {x: 4, y: 0, z: 0}
+--- !u!114 &8875805206260577917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945414602610151711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae7eb1a05bc634b934591dc71bccc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5789612302736586997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945414602610151711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243fedd17e5dc3742ac96c9f1719fe3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &421600143624549885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945414602610151711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc6937c7b492cd4599994cd1f0552c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsData:
+  - Event: {fileID: 11400000, guid: f8ab9759f9d39094e8bf240e5727c51b, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5789612302736586997}
+          m_TargetAssemblyTypeName: SI_ShieldsLevel, Assembly-CSharp
+          m_MethodName: OnEnemiesMovedDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8290316350257651844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945414602610151711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3506d9bf768097b4a85c8d77af3c756f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsData:
+  - Event: {fileID: 11400000, guid: c75855648d4ad8848b408a60b79507d6, type: 2}
+    Actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1945414602610151710}
+          m_TargetAssemblyTypeName: SI_ShieldsManager, Assembly-CSharp
+          m_MethodName: OnShieldDestroyed
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

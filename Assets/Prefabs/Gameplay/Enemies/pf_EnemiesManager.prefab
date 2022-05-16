@@ -68,6 +68,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6620020463342054963}
+        m_TargetAssemblyTypeName: SI_MoveEnemies, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4290331222321395034}
+        m_TargetAssemblyTypeName: SI_ShootFromEnemies, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7590981547777720401}
         m_TargetAssemblyTypeName: SI_DefaultMoveSpeed, Assembly-CSharp
         m_MethodName: SetDefaultMoveSpeed
@@ -106,6 +130,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 1
   delay: 0.5
+  onEnemiesMovedDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f8ab9759f9d39094e8bf240e5727c51b, type: 2}
+        m_TargetAssemblyTypeName: SI_EventWith1Param`1[[UnityEngine.Vector3, UnityEngine
+        m_MethodName: Invoke
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4290331222321395034
 MonoBehaviour:
   m_ObjectHideFlags: 0

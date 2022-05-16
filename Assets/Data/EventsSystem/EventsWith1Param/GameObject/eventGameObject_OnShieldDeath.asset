@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb45728ecb811d4b80e27608f5f6750, type: 3}
-  m_Name: objectsPool_LiveUI
+  m_Script: {fileID: 11500000, guid: d8bcf38a118da494880d4da2b294003d, type: 3}
+  m_Name: eventGameObject_OnShieldDeath
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4884224226666896136, guid: fd4372c2eb404ec4b85f698c95502d77, type: 3}
-  initCount: 3

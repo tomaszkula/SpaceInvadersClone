@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3325136551136070091}
+  - component: {fileID: 6212283285866172489}
   m_Layer: 0
   m_Name: pf_ObjectsPoolsManager
   m_TagString: Untagged
@@ -31,3 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6212283285866172489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866340647869066982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d74eb279c3c11143913359fabfbec9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsPools:
+  - {fileID: 11400000, guid: 8a683228fa65bbf4a9815fee07c4e25f, type: 2}
+  - {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
+  - {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
+  - {fileID: 11400000, guid: 227781ce79c471c4ea29b5ad0903c539, type: 2}
+  - {fileID: 11400000, guid: 7cdd8d02595ca0a4c8f3ca2ee90ff6cc, type: 2}
+  - {fileID: 11400000, guid: 7473e32cb9f14dd4e96ccea9fd2ec987, type: 2}
+  - {fileID: 11400000, guid: ad16f7237a0968640a1aad1c71daab05, type: 2}
+  - {fileID: 11400000, guid: d2255fc0b304dc844b70b6368e1064a7, type: 2}
