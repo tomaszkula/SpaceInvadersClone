@@ -69,7 +69,7 @@ public class SI_EnemiesManager : MonoBehaviour
             {
                 SI_Enemy _enemy = _wave.EnemyObjectsPool.Get().GetComponent<SI_Enemy>();
                 _enemy.transform.SetParent(myTransform);
-                _enemy.transform.position += myTransform.position + i * enemiesWave.PositionOffset + j * _wave.PositionOffset - _positionOffset;
+                _enemy.transform.localPosition = i * enemiesWave.PositionOffset + j * _wave.PositionOffset - _positionOffset;
                 Enemies.Add(_enemy);
             }
         }

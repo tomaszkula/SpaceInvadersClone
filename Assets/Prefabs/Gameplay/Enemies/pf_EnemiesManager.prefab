@@ -56,18 +56,6 @@ MonoBehaviour:
   onEnemyWaveDestroyed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3156475094621439715}
-        m_TargetAssemblyTypeName: SI_EnemiesManager, Assembly-CSharp
-        m_MethodName: SpawnEnemies
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6620020463342054963}
         m_TargetAssemblyTypeName: SI_MoveEnemies, Assembly-CSharp
         m_MethodName: Init
@@ -116,6 +104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3156475094621439715}
+        m_TargetAssemblyTypeName: SI_EnemiesManager, Assembly-CSharp
+        m_MethodName: SpawnEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6620020463342054963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685906324eb072148badc6f0f7954806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 1
-  delay: 0.5
+  delayToMoveOnStart: 1
+  distanceToMove: 1
+  delayBetweenStep: 0.5
   onEnemiesMovedDown:
     m_PersistentCalls:
       m_Calls:

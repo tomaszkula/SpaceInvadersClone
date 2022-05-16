@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d1dfb5cb82def448aa48a3a2dd290b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsPool: {fileID: 11400000, guid: ac58bd1af120b6145ba187a45957ce21, type: 2}
+  objectsPool: {fileID: 11400000, guid: 227781ce79c471c4ea29b5ad0903c539, type: 2}
   onDeath:
     m_PersistentCalls:
       m_Calls:
