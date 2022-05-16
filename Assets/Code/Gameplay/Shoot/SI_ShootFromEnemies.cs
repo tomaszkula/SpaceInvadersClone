@@ -1,24 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
 {
     [Header("Variables")]
     [SerializeField] private float shootDelayFromStart = 3f;
-    [SerializeField] private float shootCooldown = 1f;
     [SerializeField] private SI_ObjectsPool bulletObjectsPool = null;
 
     private bool canShoot = false;
-    private float shootTime = 0f;
+    private float shootCooldown = 0f;
     private WaitForSeconds waiterFromStart = null;
 
     [Header("Components")]
     private SI_EnemiesManager enemiesManager = null;
+    private SI_IShootDelay iShootDelay = null;
 
     private void Awake()
     {
         enemiesManager = GetComponent<SI_EnemiesManager>();
+        iShootDelay = GetComponent<SI_IShootDelay>();
 
         waiterFromStart = new WaitForSeconds(shootDelayFromStart);
     }
@@ -31,20 +31,20 @@ public class SI_ShootFromEnemies : MonoBehaviour, SI_IShoot
 
     private void Update()
     {
-        if(shootTime > 0f)
+        if(shootCooldown > 0f)
         {
-            shootTime -= Time.deltaTime;
+            shootCooldown -= Time.deltaTime;
         }
     }
 
     public void Shoot()
     {
-        if(canShoot == false || shootTime > 0f || enemiesManager.Enemies.Count < 1)
+        if(canShoot == false || shootCooldown > 0f || enemiesManager.Enemies.Count < 1)
         {
             return;
         }
 
-        shootTime = shootCooldown;
+        shootCooldown = iShootDelay?.ShootDelay ?? 1f;
 
         int _targetId = Random.Range(0, enemiesManager.Enemies.Count);
         GameObject _bulletInstance = bulletObjectsPool.Get();

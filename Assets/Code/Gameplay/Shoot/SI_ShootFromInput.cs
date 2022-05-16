@@ -1,24 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SI_ShootFromInput : MonoBehaviour, SI_IShoot
 {
     [Header("Variables")]
     [SerializeField] private SI_ObjectsPool bulletObjectsPool = null;
-    [SerializeField] private float shootCooldown = 0.5f;
 
     private bool isShooting = false;
-    private float shootTime = 0f;
+    private float shootCooldown = 0f;
 
     [Header("References")]
     [SerializeField] private Transform bulletsSpawner = null;
 
+    [Header("Components")]
+    private SI_IShootDelay iShootDelay = null;
+
+    private void Awake()
+    {
+        iShootDelay = GetComponent<SI_IShootDelay>();
+    }
+
     private void Update()
     {
-        if(shootTime > 0f)
+        if(shootCooldown > 0f)
         {
-            shootTime -= Time.deltaTime;
+            shootCooldown -= Time.deltaTime;
         }
     }
 
@@ -34,9 +39,9 @@ public class SI_ShootFromInput : MonoBehaviour, SI_IShoot
 
     public void Shoot()
     {
-        if(isShooting && shootTime <= 0f)
+        if(isShooting && shootCooldown <= 0f)
         {
-            shootTime = shootCooldown;
+            shootCooldown = iShootDelay?.ShootDelay ?? 1f;
 
             GameObject _bulletInstance = bulletObjectsPool.Get();
             _bulletInstance.transform.position = bulletsSpawner.position;

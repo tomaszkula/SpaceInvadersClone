@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SI_MoveAcceleration : MonoBehaviour
 {
-    [Header("Variables")]
-    [SerializeField] private float acceleration = 1.1f;
+    [Header("Events")]
+    [SerializeField] private UnityEvent<float> onMoveAccelerated = null;
 
     [Header("Components")]
     private SI_IMoveSpeed iMoveSpeed = null;
@@ -13,13 +14,15 @@ public class SI_MoveAcceleration : MonoBehaviour
         iMoveSpeed = GetComponent<SI_IMoveSpeed>();
     }
 
-    public void Accelerate()
+    public void Accelerate(float _acceleration)
     {
         if(iMoveSpeed == null)
         {
             return;
         }
 
-        iMoveSpeed.MoveSpeed *= acceleration;
+        iMoveSpeed.MoveSpeed *= _acceleration;
+
+        onMoveAccelerated?.Invoke(_acceleration);
     }
 }

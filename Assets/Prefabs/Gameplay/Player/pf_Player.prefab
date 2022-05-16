@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 6745233010730642253}
   - component: {fileID: 6491581522967391784}
   - component: {fileID: 2132192076198925762}
+  - component: {fileID: 6098769306146641726}
   - component: {fileID: 2240659356622429186}
   - component: {fileID: 683484916560406634}
   m_Layer: 0
@@ -179,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObjectsPool: {fileID: 11400000, guid: e05ec99f766f97641a3a667232304b6b, type: 2}
-  shootCooldown: 0.5
   bulletsSpawner: {fileID: 6914904459441598156}
 --- !u!114 &4393953234904621482
 MonoBehaviour:
@@ -289,6 +289,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererForBounds: {fileID: 1919227768897839846}
+--- !u!114 &6098769306146641726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6539f4b382a55d14faab4e63ca803df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultShootDelay: 0.5
 --- !u!114 &2240659356622429186
 MonoBehaviour:
   m_ObjectHideFlags: 0
