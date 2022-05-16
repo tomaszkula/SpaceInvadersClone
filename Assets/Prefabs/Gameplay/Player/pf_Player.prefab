@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1919227769027152574}
+  - component: {fileID: 233393841276143418}
   - component: {fileID: 1919227769027152575}
   - component: {fileID: 5232600303451368589}
   - component: {fileID: 1919227769027152572}
@@ -132,6 +133,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &233393841276143418
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919227769027152573}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1919227769027152575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe42032bcecf5a4789fe1a0fc154781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableDamageTypes:
+  killDamageTypes:
+  - {fileID: 11400000, guid: 86482f79a3c8fe14d902d6a8a1bbcfd5, type: 2}
+  normalDamageTypes:
   - {fileID: 11400000, guid: 60bec543f5f99614ab8c34f8de6deba5, type: 2}
 --- !u!1 &5802466870989396512
 GameObject:

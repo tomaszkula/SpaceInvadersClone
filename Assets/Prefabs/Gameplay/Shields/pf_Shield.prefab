@@ -71,9 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe42032bcecf5a4789fe1a0fc154781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableDamageTypes:
-  - {fileID: 11400000, guid: d53bc90f1332c72418ec4b0cde4c47a7, type: 2}
+  killDamageTypes:
+  - {fileID: 11400000, guid: 86482f79a3c8fe14d902d6a8a1bbcfd5, type: 2}
+  normalDamageTypes:
   - {fileID: 11400000, guid: 60bec543f5f99614ab8c34f8de6deba5, type: 2}
+  - {fileID: 11400000, guid: d53bc90f1332c72418ec4b0cde4c47a7, type: 2}
 --- !u!1 &4680211214697754768
 GameObject:
   m_ObjectHideFlags: 0
